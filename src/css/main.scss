@@ -10,3 +10,7 @@ body {
 main {
 	margin: 50px $primary-left-right-margin 50px $primary-left-right-margin;
 }
+
+.KASA-no-break {
+	white-space: nowrap;
+}

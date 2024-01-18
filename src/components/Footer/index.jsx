@@ -4,10 +4,10 @@ import '../../css/Footer/index.scss'
 
 function Footer() {
 	return (
-		<footer className="Footer">
-			<div className="kasa-logo-copyright-container">
-				<img src={logo} alt="Logo Kasa" className="kasa-logo" />
-				<p className="kasa-copyright">
+		<footer className="KASA-Footer">
+			<div className="KASA-Footer-logo-copyright-container">
+				<img src={logo} alt="Logo Kasa" className="KASA-Footer-logo" />
+				<p className="KASA-Footer-copyright">
 					© 2020 Kasa. All rights reserved
 				</p>
 			</div>

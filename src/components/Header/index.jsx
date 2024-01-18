@@ -5,13 +5,13 @@ import '../../css/Header/index.scss'
 
 function Header() {
 	return (
-		<header className="Header">
-			<img src={logo} alt="Logo Kasa" className="kasa-logo" />
-			<nav className="kasa-nav">
-				<NavLink to="/" className="kasa-link">
+		<header className="KASA-Header">
+			<img src={logo} alt="Logo Kasa" className="KASA-Header-logo" />
+			<nav className="KASA-Header-nav">
+				<NavLink to="/" className="KASA-Header-link">
 					ACCUEIL
 				</NavLink>
-				<NavLink to="/about" className="kasa-link">
+				<NavLink to="/about" className="KASA-Header-link">
 					A PROPOS
 				</NavLink>
 			</nav>

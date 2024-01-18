@@ -1,6 +1,6 @@
 /******** Variable and Function ********/
 @mixin primary-left-right-margin($margin) {
-	.Header,
+	.KASA-Header,
 	main {
 		margin-left: $margin;
 		margin-right: $margin;
@@ -15,12 +15,12 @@
 }
 
 @mixin Header($height, $margin-top, $link-font-size, $link-margin) {
-	.Header {
+	.KASA-Header {
 		height: $height;
 		margin-top: $margin-top;
 
-		.kasa-nav {
-			.kasa-link {
+		.KASA-Header-nav {
+			.KASA-Header-link {
 				font-size: $link-font-size;
 				margin-left: $link-margin;
 			}
@@ -29,10 +29,66 @@
 }
 
 @mixin Footer($height, $max-width) {
-	.Footer {
-		.kasa-logo-copyright-container {
+	.KASA-Footer {
+		.KASA-Footer-logo-copyright-container {
 			height: $height;
 			max-width: $max-width;
+		}
+	}
+}
+
+@mixin Banner() {
+	.KASA-Banner {
+		.KASA-Banner-title {
+			font-size: 24px;
+			padding: 16px;
+		}
+
+		.KASA-Banner-cover {
+			border-radius: 10px;
+			height: 111px;
+			width: 100%;
+			outline: 56px solid rgba(0, 0, 0, 0.3);
+			outline-offset: -56px;
+		}
+	}
+}
+
+@mixin Home($padding-card-list, $padding-card, $bg-none: false) {
+	.KASA-Home {
+		.KASA-Home-lodging-liste {
+			padding: $padding-card-list;
+			@if $bg-none {
+				background: none;
+			}
+			gap: $padding-card;
+		}
+	}
+}
+
+@mixin Card(
+	$height,
+	$width,
+	$is-min-height: false,
+	$min-height: 0,
+	$is-margin-title: false,
+	$margin-title: 0
+) {
+	.KASA-Card {
+		@if $is-margin-title {
+			.KASA-Card-title-container {
+				.KASA-Card-title {
+					margin: $margin-title;
+				}
+			}
+		}
+
+		.KASA-Card-cover {
+			height: $height;
+			width: $width;
+			@if $is-min-height {
+				min-height: $min-height;
+			}
 		}
 	}
 }
@@ -45,6 +101,9 @@
 
 	@include primary-left-right-margin(50px);
 	@include main-tag-top-bottom-margin(40px);
+
+	@include Home(20px, 20px);
+	@include Card(300px, 300px);
 }
 
 /* Small devices ( phones, less/equal than 768px) */
@@ -54,9 +113,16 @@
 
 	@include primary-left-right-margin(20px);
 	@include main-tag-top-bottom-margin(27px);
+
+	@include Banner();
+
+	@include Home(0, 30px, true);
+	@include Card(auto, 100%, true, 400px, true, 15px 20px);
 }
 
-/* Extra Small devices ( less than 375px) */
-@media (max-width: 374px) {
+/* Extra Small devices ( less/equal than 375px) */
+@media (max-width: 375px) {
 	@include Header(34px, 20px, 12px, 15px);
+
+	@include Card(auto, 100%, true, 255px);
 }

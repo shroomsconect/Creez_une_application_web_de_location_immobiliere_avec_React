@@ -1,10 +1,20 @@
+import { MemoryRouter } from 'react-router-dom'
 import { render, screen } from '@testing-library/react'
+
 import Home from './'
 
 describe('The Home component', () => {
-	it('should renders learn react link', () => {
-		render(<Home />)
-		const linkElement = screen.getByText(/learn react/i)
-		expect(linkElement).toBeInTheDocument()
+	it('should render title', () => {
+		render(
+			<MemoryRouter>
+				<Home />
+			</MemoryRouter>,
+		)
+		expect(
+			screen.getByRole('heading', {
+				level: 1,
+				text: 'Chez vous, partout et ailleurs',
+			}),
+		).toBeTruthy()
 	})
 })
