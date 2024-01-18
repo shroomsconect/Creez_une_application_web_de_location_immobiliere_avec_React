@@ -3,7 +3,7 @@ import '../../css/Home/index.scss'
 
 function Home() {
 	return (
-		<div className="Home">
+		<main className="Home">
 			<header className="Home-header">
 				<img src={logo} className="Home-logo" alt="logo" />
 				<p>
@@ -18,7 +18,7 @@ function Home() {
 					Learn React
 				</a>
 			</header>
-		</div>
+		</main>
 	)
 }
 

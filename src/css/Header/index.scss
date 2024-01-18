@@ -1,0 +1,31 @@
+/******** Variable and Function ********/
+$link-color: #ff6060;
+$primary-left-right-margin: 100px;
+
+/******** General ********/
+.Header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 68px;
+	margin: 45px $primary-left-right-margin 0 $primary-left-right-margin;
+
+	.kasa-logo {
+		height: 100%;
+		width: auto;
+	}
+
+	.kasa-nav {
+		.kasa-link {
+			font-size: 24px;
+			color: $link-color;
+			text-decoration: none;
+			margin-left: 57px;
+			&.active {
+				text-decoration: underline;
+				cursor: default;
+			}
+		}
+	}
+}

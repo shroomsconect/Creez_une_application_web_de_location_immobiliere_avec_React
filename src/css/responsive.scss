@@ -1,0 +1,62 @@
+/******** Variable and Function ********/
+@mixin primary-left-right-margin($margin) {
+	.Header,
+	main {
+		margin-left: $margin;
+		margin-right: $margin;
+	}
+}
+
+@mixin main-tag-top-bottom-margin($margin) {
+	main {
+		margin-top: $margin;
+		margin-bottom: $margin;
+	}
+}
+
+@mixin Header($height, $margin-top, $link-font-size, $link-margin) {
+	.Header {
+		height: $height;
+		margin-top: $margin-top;
+
+		.kasa-nav {
+			.kasa-link {
+				font-size: $link-font-size;
+				margin-left: $link-margin;
+			}
+		}
+	}
+}
+
+@mixin Footer($height, $max-width) {
+	.Footer {
+		.kasa-logo-copyright-container {
+			height: $height;
+			max-width: $max-width;
+		}
+	}
+}
+
+/******** Responsive media queries ********/
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+	@include Header(56px, 35px, 21px, 40px);
+	@include Footer(100px, unset);
+
+	@include primary-left-right-margin(50px);
+	@include main-tag-top-bottom-margin(40px);
+}
+
+/* Small devices ( phones, less/equal than 768px) */
+@media (max-width: 768px) {
+	@include Header(46px, 20px, 12px, 26px);
+	@include Footer(114px, 134px);
+
+	@include primary-left-right-margin(20px);
+	@include main-tag-top-bottom-margin(27px);
+}
+
+/* Extra Small devices ( less than 375px) */
+@media (max-width: 374px) {
+	@include Header(34px, 20px, 12px, 15px);
+}
