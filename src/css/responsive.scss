@@ -14,7 +14,13 @@
 	}
 }
 
-@mixin Header($height, $margin-top, $link-font-size, $link-margin) {
+@mixin Header(
+	$height,
+	$margin-top,
+	$link-font-size,
+	$link-margin,
+	$isLinkUpperCase: false
+) {
 	.KASA-Header {
 		height: $height;
 		margin-top: $margin-top;
@@ -23,6 +29,9 @@
 			.KASA-Header-link {
 				font-size: $link-font-size;
 				margin-left: $link-margin;
+				@if $isLinkUpperCase {
+					text-transform: uppercase;
+				}
 			}
 		}
 	}
@@ -108,7 +117,7 @@
 
 /* Small devices ( phones, less/equal than 768px) */
 @media (max-width: 768px) {
-	@include Header(46px, 20px, 12px, 26px);
+	@include Header(46px, 20px, 12px, 26px, true);
 	@include Footer(114px, 134px);
 
 	@include primary-left-right-margin(20px);
@@ -122,7 +131,7 @@
 
 /* Extra Small devices ( less/equal than 375px) */
 @media (max-width: 375px) {
-	@include Header(34px, 20px, 12px, 15px);
+	@include Header(34px, 20px, 12px, 15px, true);
 
 	@include Card(auto, 100%, true, 255px);
 }

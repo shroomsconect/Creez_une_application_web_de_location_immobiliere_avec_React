@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import Home from './'
 
-describe('The Home component', () => {
+describe('The Home page', () => {
 	it('should render title', () => {
 		render(
 			<MemoryRouter>

@@ -9,10 +9,10 @@ function Header() {
 			<img src={logo} alt="Logo Kasa" className="KASA-Header-logo" />
 			<nav className="KASA-Header-nav">
 				<NavLink to="/" className="KASA-Header-link">
-					ACCUEIL
+					Accueil
 				</NavLink>
 				<NavLink to="/about" className="KASA-Header-link">
-					A PROPOS
+					A Propos
 				</NavLink>
 			</nav>
 		</header>

@@ -25,13 +25,17 @@ $bg-color-description: #f6f6f6;
 		z-index: 1;
 
 		&::after {
-			content: url(http://localhost:3000/static/media/chevron-up-solid.252bfe60dde6d29f3918.svg);
+			content: url(../../assets/chevron-up-solid.svg);
 			position: absolute;
 			width: 32px;
 			height: 32px;
 			right: 20px;
 			cursor: pointer;
 			pointer-events: initial;
+			transition: transform 500ms ease-in-out;
+		}
+		&.rotate::after {
+			transform: rotate(-180deg);
 		}
 	}
 

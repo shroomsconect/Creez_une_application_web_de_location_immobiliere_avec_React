@@ -11,20 +11,22 @@ function Collapse({ id, title, description, open }) {
 	}
 
 	useEffect(() => {
-		console.log(idCollapse, ' => ', isOpened)
 		const collapse = document.getElementById(idCollapse)
-		const descriptionCollapse = document.querySelector(
-			`#${idCollapse} .KASA-Collapse-description`,
+		const titleCollapse = collapse.querySelector('.KASA-Collapse-title')
+		const descriptionCollapse = collapse.querySelector(
+			'.KASA-Collapse-description',
 		)
 
 		if (isOpened) {
 			collapse.style.height = collapse.scrollHeight + 'px'
 			descriptionCollapse.style.transform = 'translateY(0)'
+			titleCollapse.classList.add('rotate')
 		} else {
 			collapse.style.height = ''
 			descriptionCollapse.style.transform = ''
+			titleCollapse.classList.remove('rotate')
 		}
-	}, [isOpened])
+	}, [isOpened, idCollapse])
 
 	return (
 		<article className="KASA-Collapse" id={idCollapse}>

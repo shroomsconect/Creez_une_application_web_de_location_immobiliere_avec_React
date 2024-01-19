@@ -1,10 +1,13 @@
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import About from './'
 
-describe('The About component', () => {
-	it('should render text', () => {
-		render(<About />)
-		const element = screen.getByText('About')
-		expect(element).toBeInTheDocument()
+describe('The About page', () => {
+	it('should render one cover Banner', () => {
+		const { container } = render(<About />)
+
+		const coverBannerElement =
+			container.getElementsByClassName('KASA-Banner-cover')
+
+		expect(coverBannerElement.length).toBe(1)
 	})
 })
