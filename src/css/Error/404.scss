@@ -1,0 +1,28 @@
+/******** Variable and Function ********/
+$primary-color: #ff6060;
+
+/******** General ********/
+.KASA-Error404 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	color: $primary-color;
+	min-height: 800px;
+
+	.KASA-Error404-title {
+		font-size: 288px;
+		font-weight: 700;
+		margin: 0;
+	}
+
+	.KASA-Error404-description {
+		font-size: 36px;
+		margin: 0;
+	}
+
+	.KASA-Error404-link {
+		color: $primary-color;
+		font-size: 18px;
+	}
+}

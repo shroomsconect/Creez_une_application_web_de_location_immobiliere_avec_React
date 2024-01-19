@@ -1,35 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
+
+import reportWebVitals from './reportWebVitals'
 
 import './css/main.scss'
 
-import Home from './pages/Home'
-import About from './pages/About'
-import Lodging from './pages/Lodging'
-
-import Header from './components/Header'
-import Footer from './components/Footer'
-
-import Error404 from './components/Error/404'
-
-import reportWebVitals from './reportWebVitals'
+import router from './components/Router'
 
 import './css/responsive.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
 	<React.StrictMode>
-		<Router>
-			<Header />
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/lodging/:idLodging" element={<Lodging />} />
-				<Route path="*" element={<Error404 />} />
-			</Routes>
-			<Footer />
-		</Router>
+		<RouterProvider router={router} />
 	</React.StrictMode>,
 )
 
