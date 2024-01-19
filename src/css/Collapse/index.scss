@@ -1,0 +1,47 @@
+/******** Variable and Function ********/
+$primary-color: #ff6060;
+$secondary-color: white;
+$bg-color-description: #f6f6f6;
+
+/******** General ********/
+.KASA-Collapse {
+	display: flex;
+	flex-direction: column;
+	height: 50px;
+	max-width: 1023px;
+	overflow: hidden;
+	margin: 0 0 30px 0;
+	transition: height 500ms ease-in-out;
+
+	.KASA-Collapse-title {
+		position: relative;
+		font-size: 24px;
+		color: $secondary-color;
+		background: $primary-color;
+		padding: 10px 15px;
+		margin: 0;
+		border-radius: 5px;
+		pointer-events: none;
+		z-index: 1;
+
+		&::after {
+			content: url(http://localhost:3000/static/media/chevron-up-solid.252bfe60dde6d29f3918.svg);
+			position: absolute;
+			width: 32px;
+			height: 32px;
+			right: 20px;
+			cursor: pointer;
+			pointer-events: initial;
+		}
+	}
+
+	.KASA-Collapse-description {
+		font-size: 18px;
+		color: $primary-color;
+		background: $bg-color-description;
+		padding: 25px 20px;
+		margin: 0;
+		transform: translateY(-150px);
+		transition: transform 500ms ease-in-out;
+	}
+}
