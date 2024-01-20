@@ -1,0 +1,18 @@
+/******** Variable and Function ********/
+$primary-color: white;
+$bg-color: #ff6060;
+
+/******** General ********/
+.KASA-Tag {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	min-width: 115px;
+	height: 25px;
+	margin-right: 10px;
+	padding: 0 10px;
+	border-radius: 10px;
+	color: $primary-color;
+	background: $bg-color;
+}

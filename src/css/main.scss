@@ -11,6 +11,11 @@ main {
 	margin: 50px $primary-left-right-margin 50px $primary-left-right-margin;
 }
 
+h1,
+h2 {
+	font-weight: 500;
+}
+
 .KASA-no-break {
 	white-space: nowrap;
 }

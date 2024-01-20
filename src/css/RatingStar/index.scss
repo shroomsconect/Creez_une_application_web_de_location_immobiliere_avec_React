@@ -1,0 +1,27 @@
+.KASA-RatingStar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 176px;
+	height: 36px;
+	padding: 0 5px;
+
+	.KASA-RatingStar-star,
+	.KASA-RatingStar-star-bright {
+		position: relative;
+		width: 26px;
+		height: 26px;
+	}
+
+	.KASA-RatingStar-star {
+		&::after {
+			content: url(../../assets/star.svg);
+		}
+	}
+
+	.KASA-RatingStar-star-bright {
+		&::after {
+			content: url(../../assets/star-bright.svg);
+		}
+	}
+}

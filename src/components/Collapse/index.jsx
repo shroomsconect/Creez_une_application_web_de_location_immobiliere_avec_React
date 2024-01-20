@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import '../../css/Collapse/index.scss'
 
@@ -23,7 +23,7 @@ function Collapse({ id, title, description, open }) {
 			titleCollapse.classList.add('rotate')
 		} else {
 			collapse.style.height = ''
-			descriptionCollapse.style.transform = ''
+			descriptionCollapse.style.transform = `translateY(-${collapse.scrollHeight}px)`
 			titleCollapse.classList.remove('rotate')
 		}
 	}, [isOpened, idCollapse])
@@ -36,7 +36,13 @@ function Collapse({ id, title, description, open }) {
 			>
 				{title}
 			</h2>
-			<p className="KASA-Collapse-description">{description}</p>
+			<p className="KASA-Collapse-description">
+				{Array.isArray(description) &&
+					description.map((desc, index) => (
+						<span key={idCollapse + '-desc-' + index}>{desc}</span>
+					))}
+				{!Array.isArray(description) && description}
+			</p>
 		</article>
 	)
 }
@@ -44,7 +50,8 @@ function Collapse({ id, title, description, open }) {
 Collapse.propTypes = {
 	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	title: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
+	description: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+		.isRequired,
 	open: PropTypes.bool.isRequired,
 }
 

@@ -40,12 +40,17 @@ $bg-color-description: #f6f6f6;
 	}
 
 	.KASA-Collapse-description {
+		display: flex;
+		flex-direction: column;
 		font-size: 18px;
 		color: $primary-color;
 		background: $bg-color-description;
 		padding: 25px 20px;
 		margin: 0;
-		transform: translateY(-150px);
 		transition: transform 500ms ease-in-out;
+
+		span {
+			line-height: 1.5em;
+		}
 	}
 }
