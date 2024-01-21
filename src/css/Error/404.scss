@@ -1,7 +1,5 @@
-/******** Variable and Function ********/
-$primary-color: #ff6060;
+@import '../variable.scss';
 
-/******** General ********/
 .KASA-Error404 {
 	display: flex;
 	flex-direction: column;

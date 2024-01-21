@@ -1,12 +1,10 @@
-/******** Variable et Function ********/
-$bg-color-lodging-liste: #f6f6f6;
+@import '../variable.scss';
 
-/******** General ********/
 .KASA-Home {
 	.KASA-Home-lodging-liste {
 		padding: 50px;
 		border-radius: 25px;
-		background: $bg-color-lodging-liste;
+		background: $tertiary-color;
 		display: flex;
 		gap: 40px;
 		flex-direction: row;

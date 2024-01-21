@@ -1,8 +1,5 @@
-/******** Variable and Function ********/
-$bg-color: black;
-$primary-color: white;
+@import '../variable.scss';
 
-/******** General ********/
 .KASA-Slideshow {
 	display: flex;
 	flex-direction: column;
@@ -11,7 +8,7 @@ $primary-color: white;
 	width: 100%;
 	min-height: 415px;
 	position: relative;
-	color: $primary-color;
+	color: $secondary-color;
 
 	.KASA-Slideshow-banner-img {
 		position: absolute;
@@ -38,7 +35,7 @@ $primary-color: white;
 	.KASA-Slideshow-index {
 		position: absolute;
 		font-size: 18px;
-		text-shadow: black 0px 1px 3px;
+		text-shadow: $quaternary-color 0px 1px 3px;
 		bottom: 25px;
 	}
 }

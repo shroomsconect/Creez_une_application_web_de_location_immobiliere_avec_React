@@ -1,106 +1,4 @@
-/******** Variable and Function ********/
-@mixin primary-left-right-margin($margin) {
-	.KASA-Header,
-	main {
-		margin-left: $margin;
-		margin-right: $margin;
-	}
-}
-
-@mixin main-tag-top-bottom-margin($margin) {
-	main {
-		margin-top: $margin;
-		margin-bottom: $margin;
-	}
-}
-
-@mixin Header(
-	$height,
-	$margin-top,
-	$link-font-size,
-	$link-margin,
-	$isLinkUpperCase: false
-) {
-	.KASA-Header {
-		height: $height;
-		margin-top: $margin-top;
-
-		.KASA-Header-nav {
-			.KASA-Header-link {
-				font-size: $link-font-size;
-				margin-left: $link-margin;
-				@if $isLinkUpperCase {
-					text-transform: uppercase;
-				}
-			}
-		}
-	}
-}
-
-@mixin Footer($height, $max-width) {
-	.KASA-Footer {
-		.KASA-Footer-logo-copyright-container {
-			height: $height;
-			max-width: $max-width;
-		}
-	}
-}
-
-@mixin Banner() {
-	.KASA-Banner {
-		.KASA-Banner-title {
-			font-size: 24px;
-			padding: 16px;
-		}
-
-		.KASA-Banner-cover {
-			border-radius: 10px;
-			height: 111px;
-			width: 100%;
-			outline: 56px solid rgba(0, 0, 0, 0.3);
-			outline-offset: -56px;
-		}
-	}
-}
-
-@mixin Home($padding-card-list, $padding-card, $bg-none: false) {
-	.KASA-Home {
-		.KASA-Home-lodging-liste {
-			padding: $padding-card-list;
-			@if $bg-none {
-				background: none;
-			}
-			gap: $padding-card;
-		}
-	}
-}
-
-@mixin Card(
-	$height,
-	$width,
-	$is-min-height: false,
-	$min-height: 0,
-	$is-margin-title: false,
-	$margin-title: 0
-) {
-	.KASA-Card {
-		@if $is-margin-title {
-			.KASA-Card-title-container {
-				.KASA-Card-title {
-					margin: $margin-title;
-				}
-			}
-		}
-
-		.KASA-Card-cover {
-			height: $height;
-			width: $width;
-			@if $is-min-height {
-				min-height: $min-height;
-			}
-		}
-	}
-}
+@import './responsive-function.scss';
 
 /******** Responsive media queries ********/
 /* Medium devices (tablets, less/equal than 1024px) */
@@ -127,6 +25,15 @@
 
 	@include Home(0, 30px, true);
 	@include Card(auto, 100%, true, 400px, true, 15px 20px);
+
+	@include Collapse();
+
+	@include Slideshow(255px);
+	@include Tag();
+	@include PictureName();
+	@include RatingStar();
+	@include LodgingHeaderInfo();
+	@include LodgingMainInfo();
 }
 
 /* Extra Small devices ( less/equal than 375px) */

@@ -1,7 +1,5 @@
-/******** Variable and Function ********/
-$primary-color: #ff6060;
+@import '../variable.scss';
 
-/******** General ********/
 .KASA-Lodging {
 	.KASA-Lodging-header-info {
 		display: flex;
@@ -22,6 +20,8 @@ $primary-color: #ff6060;
 
 			.KASA-Lodging-tags {
 				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
 			}
 		}
 
@@ -42,11 +42,7 @@ $primary-color: #ff6060;
 
 			.KASA-Collapse-title {
 				font-size: 18px;
-
-				&::after {
-					width: 25px;
-					height: 25px;
-				}
+				padding: 14px 15px;
 			}
 		}
 	}

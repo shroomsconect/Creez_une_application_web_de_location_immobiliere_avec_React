@@ -1,0 +1,233 @@
+/******** Function ********/
+@mixin primary-left-right-margin($margin) {
+	.KASA-Header,
+	main {
+		margin-left: $margin;
+		margin-right: $margin;
+	}
+}
+
+@mixin main-tag-top-bottom-margin($margin) {
+	main {
+		margin-top: $margin;
+		margin-bottom: $margin;
+	}
+}
+
+@mixin Header(
+	$height,
+	$margin-top,
+	$link-font-size,
+	$link-margin,
+	$isLinkUpperCase: false
+) {
+	.KASA-Header {
+		height: $height;
+		margin-top: $margin-top;
+
+		.KASA-Header-nav {
+			.KASA-Header-link {
+				font-size: $link-font-size;
+				margin-left: $link-margin;
+				@if $isLinkUpperCase {
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
+
+@mixin Footer($height, $max-width) {
+	.KASA-Footer {
+		.KASA-Footer-logo-copyright-container {
+			height: $height;
+			max-width: $max-width;
+		}
+	}
+}
+
+@mixin Banner() {
+	.KASA-Banner {
+		.KASA-Banner-title {
+			font-size: 24px;
+			padding: 16px;
+		}
+
+		.KASA-Banner-cover {
+			border-radius: 10px;
+			height: 111px;
+			width: 100%;
+			outline: 56px solid rgba(0, 0, 0, 0.3);
+			outline-offset: -56px;
+		}
+	}
+}
+
+@mixin Home($padding-card-list, $padding-card, $bg-none: false) {
+	.KASA-Home {
+		.KASA-Home-lodging-liste {
+			padding: $padding-card-list;
+			@if $bg-none {
+				background: none;
+			}
+			gap: $padding-card;
+		}
+	}
+}
+
+@mixin Card(
+	$height,
+	$width,
+	$is-min-height: false,
+	$min-height: 0,
+	$is-margin-title: false,
+	$margin-title: 0
+) {
+	.KASA-Card {
+		@if $is-margin-title {
+			.KASA-Card-title-container {
+				.KASA-Card-title {
+					margin: $margin-title;
+				}
+			}
+		}
+
+		.KASA-Card-cover {
+			height: $height;
+			width: $width;
+			@if $is-min-height {
+				min-height: $min-height;
+			}
+		}
+	}
+}
+
+@mixin Collapse() {
+	.KASA-Collapse {
+		height: 30px;
+		margin-bottom: 20px;
+
+		.KASA-Collapse-title {
+			font-size: 13px;
+			padding: 7px 10px;
+
+			&::after {
+				width: 18px;
+				height: 18px;
+				right: 10px;
+			}
+		}
+
+		.KASA-Collapse-description {
+			font-size: 12px;
+		}
+	}
+}
+
+@mixin Slideshow($height, $isNotDisplayIndex: true) {
+	.KASA-Slideshow {
+		min-height: $height;
+
+		.KASA-Slideshow-banner-img {
+			border-radius: 10px;
+		}
+
+		.KASA-Slideshow-arrow-left,
+		.KASA-Slideshow-arrow-right {
+			width: 24px;
+			height: 35px;
+		}
+		.KASA-Slideshow-arrow-left {
+			left: 5px;
+		}
+		.KASA-Slideshow-arrow-right {
+			right: 5px;
+		}
+
+		@if $isNotDisplayIndex {
+			.KASA-Slideshow-index {
+				display: none;
+			}
+		}
+	}
+}
+
+@mixin Tag() {
+	.KASA-Tag {
+		font-size: 10px;
+		height: 18px;
+		border-radius: 10px;
+	}
+}
+
+@mixin PictureName() {
+	.KASA-PictureName {
+		margin-bottom: 0;
+
+		.KASA-PictureName-name {
+			font-size: 12px;
+		}
+
+		.KASA-PictureName-picture {
+			width: 32px;
+			height: 32px;
+		}
+	}
+}
+
+@mixin RatingStar {
+	.KASA-RatingStar {
+		width: 98px;
+		height: 18px;
+		padding: 0 0;
+
+		.KASA-RatingStar-star,
+		.KASA-RatingStar-star-bright {
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
+
+@mixin LodgingHeaderInfo() {
+	.KASA-Lodging {
+		.KASA-Lodging-header-info {
+			flex-direction: column;
+
+			.KASA-Lodging-titles {
+				h1 {
+					font-size: 18px;
+				}
+
+				h2 {
+					font-size: 14px;
+				}
+			}
+
+			.KASA-Lodging-host-and-rating {
+				flex-direction: row-reverse;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+	}
+}
+
+@mixin LodgingMainInfo() {
+	.KASA-Lodging {
+		.KASA-Lodging-main-info {
+			flex-direction: column;
+			justify-content: space-between;
+			margin: 14px 0 0 0;
+
+			.KASA-Collapse {
+				flex-basis: auto;
+
+				.KASA-Collapse-title {
+					font-size: 13px;
+					padding: 7px 10px;
+				}
+			}
+		}
+	}
+}

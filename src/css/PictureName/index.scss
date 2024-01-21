@@ -1,7 +1,5 @@
-/******** Variable and Function ********/
-$primary-color: #ff6060;
+@import '../variable.scss';
 
-/******** General ********/
 .KASA-PictureName {
 	display: flex;
 	margin: 24px 0 21px 0;

@@ -1,8 +1,5 @@
-/******** Variable and Function ********/
-$link-color: #ff6060;
-$primary-left-right-margin: 100px;
+@import '../variable.scss';
 
-/******** General ********/
 .KASA-Header {
 	display: flex;
 	flex-direction: row;
@@ -19,7 +16,7 @@ $primary-left-right-margin: 100px;
 	.KASA-Header-nav {
 		.KASA-Header-link {
 			font-size: 24px;
-			color: $link-color;
+			color: $primary-color;
 			text-decoration: none;
 			margin-left: 57px;
 			&.active {

@@ -1,3 +1,5 @@
+@import '../variable.scss';
+
 .KASA-Card {
 	position: relative;
 	display: flex;
@@ -8,7 +10,7 @@
 		position: absolute;
 		display: flex;
 		align-items: flex-end;
-		color: white;
+		color: $secondary-color;
 		height: 100%;
 		width: 100%;
 		border-radius: 25px;
@@ -29,7 +31,5 @@
 		border-radius: 25px;
 		height: 340px;
 		width: 340px;
-		//outline: 170px solid linear-gradient(#ffffff00, #000000);
-		//outline-offset: -170px;
 	}
 }

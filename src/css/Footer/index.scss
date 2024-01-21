@@ -1,13 +1,10 @@
-/******** Variable and Function ********/
-$bg-color: black;
-$primary-color: white;
+@import '../variable.scss';
 
-/******** General ********/
 .KASA-Footer {
 	display: flex;
 	justify-content: center;
-	background-color: $bg-color;
-	color: $primary-color;
+	background-color: $quaternary-color;
+	color: $secondary-color;
 	height: 209px;
 
 	.KASA-Footer-logo-copyright-container {

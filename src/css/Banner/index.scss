@@ -1,3 +1,5 @@
+@import '../variable.scss';
+
 .KASA-Banner {
 	position: relative;
 	display: flex;
@@ -7,7 +9,7 @@
 
 	.KASA-Banner-title {
 		position: absolute;
-		color: white;
+		color: $secondary-color;
 		font-size: 48px;
 		padding: 30px;
 	}
